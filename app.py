@@ -11,9 +11,8 @@ variables_list = ['Sensor en terreno', 'Imagen satelital', 'Imagen dron', 'Dato 
 
 
 @app.route('/', methods=['GET'])
-def index():
-    sensores_list = requests.get('https://api-evergreen-535.azurewebsites.net/mediciones').json()
-    return render_template('listarSensores.html', mediciones=sensores_list)
+def crearSensor():
+    return render_template('crearSensor.html', variables=variables_list) 
 
 
 @app.route('/crearSensor', methods=['GET'])
