@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask Client</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
+   
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="container">
+    <h1 class="form-group text-center">Lista de Entidad</h1>
+    <div class="container jumbotron" style="width: 60%;">
+      <ul class="list-group">
+        {% for item in mediciones %}
+        <li class="list-group-item">
+          <span class="pull-right">
+            <img src="{{item.imagen}}" style="width: 100px; height: 60px;">
+          </span>
+          <b>Fecha :</b> {{item.fecha}} <br/>
+          <b>Origen :</b> {{item.origen}} <br/>
+          <b>Valor:</b> {{item.valor}} <br/>
+          <b>Codigo Sensor :</b> {{item.codigoSensor}} <br/>
+          <b>Observacion :</b> {{item.observacion}} <br/>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
