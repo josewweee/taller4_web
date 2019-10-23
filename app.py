@@ -1,3 +1,7 @@
+import importlib
+
+importlib.reload(sys.modules['azure'])
+
 from flask import Flask, jsonify, request, render_template
 import requests
  
